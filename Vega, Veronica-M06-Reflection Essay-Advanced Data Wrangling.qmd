@@ -1,0 +1,259 @@
+---
+title: "M06-Reflection Essay-Advanced Data Wrangling"
+author: "Veronica Vega"
+date: today
+  
+format: 
+  html:
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    code-link: true
+    embed-resources: true
+    theme: cosmo
+editor: visual
+execute:
+  freeze: auto
+---
+
+#  Introduction
+
+::: {.callout-note}
+
+This report reflects on my learning experience with RevealJS presentations and advanced data wrangling in R. The report demonstrates both technical skills and personal reflections gained throughout Module 6.
+
+:::
+
+## Prompt
+
+\*\* In Step 1, you learned how to design stunning presentation slides with Quarto. What's your impression of the RevealJS presentation? Describe its capabilities as you learned from the presentations. What are its strengths and weaknesses compared with PPT?\*\*
+
+## Response
+
+RevealJS was one of the most interesting tools I learned during this course. It allows users to create presentations using Quarto and Markdown rather than designing slides manually. The presentation is generated from code, which makes it highly reproducible and easy to update.
+
+Some capabilities of RevealJS include:
+
+- Interactive slides
+
+- Navigation controls
+
+- Embedded code
+
+- Tables and charts
+
+- Incremental bullet points
+
+- Themes and custom styling
+
+- Publication to GitHub Pages
+
+Compared with Microsoft PowerPoint, RevealJS offers better reproducibility and integration with data analysis workflows. Since slides are generated directly from code, any changes in the data can automatically update the presentation.
+
+However, RevealJS also has weaknesses. PowerPoint provides a more user-friendly drag-and-drop interface and offers more visual editing tools. Beginners may find RevealJS difficult because it requires familiarity with Markdown and coding concepts.
+
+Overall, I believe RevealJS is powerful for data analysts because it combines presentation design with reproducible research.
+
+## Strengths and Weaknesses
+
+\| Strengths of RevealJS \| Weaknesses of RevealJS \|
+
+\|----------\|----------\|
+
+\| Reproducible \| Requires coding \|
+
+\| Works with Quarto \| Steeper learning curve \|
+
+\| Easy web publishing \| Less intuitive design tools \|
+
+\| Integrates with R \| More setup required \|
+
+# My RevealJS Presentation
+
+## Prompt
+
+\*\*In Step 2, you were asked to create a RevealJS presentation. Provide a link to the presentation you published on the web. Add at least one reproducible chart or table in the presentation. Briefly describe what the presentation is about. What did you learn from the experience of the RevealJS presentation?\*\*
+
+## Response
+
+My RevealJS presentation can be viewed here:
+
+\*\*Presentation Link:\*\* INSERT YOUR GITHUB PAGES URL HERE
+
+The presentation focused on introducing BigQuery and demonstrating how cloud-based databases can be used to analyze large datasets efficiently.
+
+During the project I learned how to:
+
+- Create RevealJS slides using Quarto
+
+- Publish presentations to GitHub Pages
+
+- Insert charts and tables
+
+- Organize content using slide sections
+
+- Create professional web-based presentations
+
+One of the biggest lessons learned was that presentation content can be managed entirely through code, making revisions much easier and more reproducible.
+
+# Example Reproducible Chart
+
+\`\`\`{r}
+
+library(ggplot2)
+
+ggplot(mtcars,
+
+aes(x = wt,
+
+y = mpg)) +
+
+geom_point(color = "blue") +
+
+labs(
+
+title = "Vehicle Weight vs MPG",
+
+x = "Weight",
+
+y = "Miles Per Gallon"
+
+)
+
+\`\`\`
+
+Figure \@fig-weight demonstrates the relationship between vehicle weight and fuel efficiency.
+
+# Advanced Data Wrangling
+
+## Prompt
+
+\*\*My advanced wrangling lecture in Step 3 introduced new concepts, including how to join relational databases. Pick three different functions, each from a different category. Describe when to use them and give one coding example along with an output for each function.\*\*
+
+# Function 1: left_join()
+
+## When to Use
+
+The \`left_join()\` function is used when we want to keep all records from the left table and bring matching information from another table.
+
+\`\`\`{r}
+
+library(dplyr)
+
+students \<- data.frame(
+
+id = c(1,2,3),
+
+name = c("Amy","Bob","Chris")
+
+)
+
+grades \<- data.frame
+
+id = c(1,2),
+
+grade = c("A","B")
+
+)
+
+left_join(students, grades, by = "id")
+
+\`\`\`
+
+### Output Discussion
+
+The output keeps all students. If no matching grade exists, the result displays NA.
+
+# Function 2: filter()
+
+## When to Use
+
+The \`filter()\` function is used to select rows that satisfy a specific condition.
+
+\`\`\`{r}
+
+library(dplyr)
+
+filter(mtcars, mpg \> 25)
+
+\`\`\`
+
+### Output Discussion
+
+This output displays only vehicles that achieve more than 25 miles per gallon.
+
+# Function 3: summarize()
+
+## When to Use
+
+The \`summarize()\` function is useful for calculating statistics such as averages, totals, counts, minimums, and maximums.
+
+\`\`\`{r}
+
+library(dplyr)
+
+mtcars %\>%
+
+summarize(
+
+Average_MPG = mean(mpg)
+
+)
+
+\`\`\`
+
+### Output Discussion
+
+The function calculates the average miles per gallon across all vehicles in the dataset.
+
+# Additional Quarto Features
+
+## Callout Example
+
+::: {.callout-tip}
+
+Advanced data wrangling becomes much easier when functions are combined using the pipe operator \`%\>%\`.
+
+:::
+
+## Blockquote Example
+
+\> Data wrangling is the process of transforming raw data into a useful format for analysis.
+
+## Footnote Example
+
+Data cleaning is one of the most time-consuming activities in analytics.\^\[Wickham's tidyverse framework emphasizes clean, tidy data structures.\]
+
+## Cross Reference
+
+See \@tbl-summary for a summary of functions used in this report.
+
+\`\`\`{r}
+
+#\| label: tbl-summary
+
+#\| tbl-cap: "Summary of Functions"
+
+data.frame(
+
+Function = c("left_join","filter","summarize"),
+
+Purpose = c(
+
+"Merge tables",
+
+"Select rows",
+
+"Calculate statistics"
+
+)
+
+)
+
+\`\`\`
+
+# Conclusion
+
+This module expanded my understanding of both RevealJS presentations and advanced data wrangling techniques in R. Through this experience I learned how reproducible reports and presentations can be created using Quarto while also gaining practical experience with important data manipulation functions such as left_join(), filter(), and summarize(). These skills will be valuable for future data analysis and reporting projects.
+
+\`\`
